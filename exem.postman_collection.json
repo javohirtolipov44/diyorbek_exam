@@ -1,0 +1,722 @@
+{
+	"info": {
+		"_postman_id": "628cc9c5-7925-422e-8319-8215669aa63f",
+		"name": "exem",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40789787"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"alijon\",\r\n  \"email\": \"alijon@example.com\",\r\n  \"password\": \"12345678\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/auth/register",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"alijon@example.com\",\r\n  \"password\": \"12345678\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/auth/login",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/auth/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"auth",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/admin/movies",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "poster",
+							"type": "file",
+							"src": "/C:/Users/user/OneDrive/Pictures/Screenshots/Screenshot 2025-04-23 122930.png"
+						},
+						{
+							"key": "title",
+							"value": "Qasoskorlar: Abadiyat Jangi",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "Marvel super hero movie",
+							"type": "text"
+						},
+						{
+							"key": "release_year",
+							"value": "2018",
+							"type": "text"
+						},
+						{
+							"key": "duration_minutes",
+							"value": "180",
+							"type": "text"
+						},
+						{
+							"key": "subscription_type",
+							"value": "free",
+							"type": "text"
+						},
+						{
+							"key": "category_ids",
+							"value": "db7edff9-87ae-4e23-9f82-4d6dfbe58e44",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/admin/movies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"admin",
+						"movies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/subscription/plans",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "poster",
+							"type": "file",
+							"src": "/C:/Users/user/OneDrive/Pictures/Screenshots/Screenshot 2025-04-17 144638.png"
+						},
+						{
+							"key": "title",
+							"value": "Avengers: Endgame",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "Marvel super hero movie",
+							"type": "text"
+						},
+						{
+							"key": "release_year",
+							"value": "2020",
+							"type": "text"
+						},
+						{
+							"key": "duration_minutes",
+							"value": "180",
+							"type": "text"
+						},
+						{
+							"key": "subscription_type",
+							"value": "premium",
+							"type": "text"
+						},
+						{
+							"key": "category_ids",
+							"value": "db7edff9-87ae-4e23-9f82-4d6dfbe58e44",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/api/subscription/plans",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"subscription",
+						"plans"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/subscription/purchase",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"plan_id\": \"152f221c-5b32-435f-bcc2-e4a1ff30a105\",\r\n  \"payment_method\": \"card\",\r\n  \"auto_renew\": true,\r\n  \"payment_details\": {\r\n    \"card_number\": \"4242XXXXXXXX4242\",\r\n    \"expiry\": \"04/26\",\r\n    \"card_holder\": \"ALIJON VALIYEV\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/subscription/purchase",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"subscription",
+						"purchase"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create.plan",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Premium\",\r\n  \"price\": 49.99,\r\n  \"durationDays\": 30,\r\n  \"features\": [\r\n    \"HD sifatli kinolar\",\r\n    \"Reklamasiz\",\r\n    \"Yangi kinolar\"\r\n  ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/subscription/plan",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"subscription",
+						"plan"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get.movie",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/movie?category=Fantastika",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"movie"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "category",
+							"value": "Fantastika"
+						},
+						{
+							"key": "search",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "subscription_type",
+							"value": "free",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get.by.slug",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/movie/qasoskorlar:-abadiyat-jangi",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"movie",
+						"qasoskorlar:-abadiyat-jangi"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get.all.movies",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/admin/movies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"admin",
+						"movies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update_movie",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "Yangilangan Sarlavha",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "Yangilangan ta'rif",
+							"type": "text"
+						},
+						{
+							"key": "subscription_type",
+							"value": "premium",
+							"type": "text"
+						},
+						{
+							"key": "category_ids",
+							"value": "db7edff9-87ae-4e23-9f82-4d6dfbe58e44",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/api/admin/movies/7bf2ae7a-af2e-4f0d-8ef5-19d68c33d5b9",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"admin",
+						"movies",
+						"7bf2ae7a-af2e-4f0d-8ef5-19d68c33d5b9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete_movie",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/admin/movies/7bf2ae7a-af2e-4f0d-8ef5-19d68c33d5b9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"admin",
+						"movies",
+						"7bf2ae7a-af2e-4f0d-8ef5-19d68c33d5b9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "upload_file",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/user/OneDrive/Pictures/Screenshots/Screenshot 2025-04-23 121216.png"
+						},
+						{
+							"key": "quality",
+							"value": "p720",
+							"type": "text"
+						},
+						{
+							"key": "language",
+							"value": "uz",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/admin/movies/b1af8bc3-c768-47c8-a124-cccf63b8e13c/files",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"admin",
+						"movies",
+						"b1af8bc3-c768-47c8-a124-cccf63b8e13c",
+						"files"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create_category",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Animatsiya\",\r\n  \"description\": \"Bolalar va kattalar uchun mo‘ljallangan animatsion filmlar\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/categories",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"categories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_all_category",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "delete_category",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Drama\",\r\n  \"description\": \"Hayotiy va emotsional voqealarni qamrab olgan filmlar\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/categories/54a8de76-1883-4930-872f-4f1ce377fde2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"categories",
+						"54a8de76-1883-4930-872f-4f1ce377fde2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_favorites",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/favorites",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"favorites"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add_favorites",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"movie_id\": \"4d085bcd-6ebe-4ed2-80d7-b92b09ee530f\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/favorites",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"favorites"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete_favorites",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/favorites/92d73d91-609d-494d-ae89-90981d21ba74",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"favorites",
+						"92d73d91-609d-494d-ae89-90981d21ba74"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add_reviews",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"rating\": 5,\r\n  \"comment\": \"Juda ajoyib film, ko'rishni tavsiya etaman!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/movies/b1af8bc3-c768-47c8-a124-cccf63b8e13c/reviews",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"movies",
+						"b1af8bc3-c768-47c8-a124-cccf63b8e13c",
+						"reviews"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete_review",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/movies/b1af8bc3-c768-47c8-a124-cccf63b8e13c/reviews/8546371b-e9da-4c7a-b7b3-18dfd95dff04",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"movies",
+						"b1af8bc3-c768-47c8-a124-cccf63b8e13c",
+						"reviews",
+						"8546371b-e9da-4c7a-b7b3-18dfd95dff04"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create_admin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"Diyorjon\",\r\n    \"email\": \"muxiddinov@gmail.com\",\r\n    \"password\": \"diyorjon8575\",\r\n    \"role\": \"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/createadmin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"createadmin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete_admin",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/createadmin/cbefb8e5-574c-4a1b-802d-f9cc6f708f61",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"createadmin",
+						"cbefb8e5-574c-4a1b-802d-f9cc6f708f61"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					"pm.environment.set(\"url\",\"localhost:4000\")"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
